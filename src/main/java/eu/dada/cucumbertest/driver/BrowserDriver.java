@@ -15,7 +15,7 @@ import eu.dada.cucumbertest.bdd.steps.LoginSteps;
 
 public class BrowserDriver {
 	
-	private final static int WAIT_TIMEOUT=5;
+	private final static int WAIT_TIMEOUT=500;
 
 	private static final Logger LOGGER = Logger.getLogger(LoginSteps.class
 			.getName());
