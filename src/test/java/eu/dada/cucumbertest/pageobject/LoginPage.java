@@ -11,37 +11,24 @@ public class LoginPage {
 
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class.getName());
 
-    @FindBy(how = How.ID, using = "submit") private WebElement loginButton;
+    /**
+     * Al posto di usare WebElement loginPage = BrowserDriver.getCurrentDriver().findElement(By.id("login"));
+     * Si usa FinfBy per settare la proprietà privata di LoginPage: Classe che rappresenta la pagina di login
+     * secondo il PageObject Pattern.
+     *
+     * LoginPage definisce tutti gli elementi della pagina con cui interagire e i metodi che permettono l'interazione.
+     */
+    @FindBy(how = How.ID, using = "submit")
+    private WebElement loginButton;
 
 
     public void isDisplayedCheck(){
         LOGGER.info("Checking login page is displayed");
         loginButton.isDisplayed();
-
-		/*WebElement loginPage = BrowserDriver.getCurrentDriver().findElement(By.id("login"));
-		loginPage.isDisplayed();*/
     }
 
-    /*public void clickExitButton() {
-        exitButton.click();
-    }Ø
-    public LoginPage logout() {
-        clickExitButton();
-        return PageFactory.initElements(driver, LoginPage.class);
-    }*/
-
-
-
-//	@FindBy(how = How.ID, using = "login")
-//	public WebElement loginPageDiv;
-//
-//	@FindBy(how = How.CSS, using = "#form-group input[name=username]")
-//	public WebElement usernameInput;
-//	
-//	@FindBy(how = How.CSS, using = "#form-group input[name=password]")
-//	public WebElement passwordInput;
-//	
-//	@FindBy(how = How.CSS, using = "#form-group span[role='button']")
-//	public WebElement submitButton;
-
+    public void loginClick(){
+        LOGGER.info("Click on login button");
+        loginButton.click();
+    }
 }

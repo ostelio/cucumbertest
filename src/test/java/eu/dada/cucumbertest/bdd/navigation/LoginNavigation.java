@@ -8,10 +8,10 @@ public class LoginNavigation {
 
 	public void given_I_navigate_to_the_webmail_login_application(){
 		BrowserDriver.loadPage("http://webmail-integration.register.it");
-		//loginView.isDisplayedCheck();
 
 		LoginPage loginPage = PageFactory.initElements(BrowserDriver.getCurrentDriver(), LoginPage.class);
 		loginPage.isDisplayedCheck();
+        loginPage.loginClick();
 	}
 
 }
