@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import eu.dada.cucumbertest.navigation.Navigation;
+import eu.dada.cucumbertest.bdd.navigation.LoginNavigation;
 
 public class LoginSteps {
 
@@ -13,7 +13,7 @@ public class LoginSteps {
 			.getName());
 
 	
-	private Navigation navigation = new Navigation();;
+	private LoginNavigation navigation = new LoginNavigation();;
 		
 	@Given("^I navigate to the webmail login application$")
 	public void given_I_navigate_to_the_webmail_login_application() {
