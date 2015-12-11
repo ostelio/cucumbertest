@@ -21,13 +21,28 @@ public class LoginPage {
     @FindBy(how = How.ID, using = "submit")
     private WebElement loginButton;
 
+    @FindBy(how = How.NAME, using = "account")
+    private WebElement accountInput;
+
+    @FindBy(how = How.ID, using = "password")
+    private WebElement passwordInput;
 
     public void isDisplayedCheck(){
         LOGGER.info("Checking login page is displayed");
         loginButton.isDisplayed();
     }
 
-    public void loginClick(){
+    public void fillAccount(String account){
+        LOGGER.info("Filling account input with " + account);
+        accountInput.sendKeys(account);
+    }
+
+    public void fillPassword(String password){
+        LOGGER.info("Filling password input with " + password);
+        passwordInput.sendKeys(password);
+    }
+
+    public void doLogin(){
         LOGGER.info("Click on login button");
         loginButton.click();
     }

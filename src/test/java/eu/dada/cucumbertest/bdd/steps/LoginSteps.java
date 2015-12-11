@@ -9,8 +9,7 @@ import eu.dada.cucumbertest.bdd.navigation.LoginNavigation;
 
 public class LoginSteps {
 
-	private static final Logger LOGGER = Logger.getLogger(LoginSteps.class
-			.getName());
+	private static final Logger LOGGER = Logger.getLogger(LoginSteps.class.getName());
 
 	
 	private LoginNavigation navigation = new LoginNavigation();;
@@ -23,13 +22,14 @@ public class LoginSteps {
 
 	@When("^I try to login with '(.+)' credentials$")
 	public void when_I_try_to_login(String credentialsType) {
-		LOGGER.info("Entering: I try to login with " + credentialsType
-				+ " credentials");
+		LOGGER.info("Entering: I try to login with " + credentialsType + " credentials");
+		navigation.when_I_try_to_login(credentialsType);
 	}
 
 	@Then("^I should see that I logged in '(.+)'$")
 	public void then_I_login(String outcome) {
 		LOGGER.info("Entering: I should see that I logged in " + outcome);
+		navigation.then_I_login();
 	}
 
 }

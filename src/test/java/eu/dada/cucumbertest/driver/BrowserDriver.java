@@ -54,14 +54,4 @@ public class BrowserDriver {
 		LOGGER.info("Directing browser to:" + url);
 		getCurrentDriver().get(url);
 	}
-	
-	public static void waitForElementByClass(String className){
-		WebDriverWait wait = new WebDriverWait(getCurrentDriver(), WAIT_TIMEOUT);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(className)));
-	}
-	
-	public static void waitForElementById(String id){
-		WebDriverWait wait = new WebDriverWait(getCurrentDriver(), WAIT_TIMEOUT);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id)));
-	}
 }
